@@ -1,4 +1,3 @@
-import index_two from './index_two'
-import './test.scss'
+import './index.scss';
 
-console.log('index 1')
+console.log('Boilerplate is working!');

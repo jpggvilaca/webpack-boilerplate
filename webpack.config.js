@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 module.exports = {
   entry: './app/index.js',
@@ -38,7 +39,7 @@ module.exports = {
   },
 
   plugins: [
-    new webpack.optimize.UglifyJsPlugin(),
+    new UglifyJsPlugin(),
     new HtmlWebpackPlugin({template: './app/index.html'}),
     new webpack.HotModuleReplacementPlugin(),
     new ExtractTextPlugin('styles.css')

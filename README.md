@@ -11,6 +11,8 @@
 ## Content
 
 * Webpack
-* ES6
-* Sass
+* ES6 support
+* Sass support
 * Hot Module Reload - browser reloads whenever a js or scss file changes.
+
+* You can change the port on webpack.config.js at line 19

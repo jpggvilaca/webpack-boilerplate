@@ -3,8 +3,9 @@
 ## Instructions
 
 * Clone repo - `git clone https://github.com/jpggvilaca/webpack-boilerplate.git`
-* Run `npm install`
-* Run `npm start`
+* Change to the cloned repo's folder - `cd webpack-boilerplate`
+* Install dependencies - `npm install`
+* Start the server - `npm start`
 * Navigate to `localhost:3500` in the browser.
 * Enjoy!
 

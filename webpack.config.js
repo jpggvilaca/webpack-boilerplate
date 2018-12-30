@@ -1,11 +1,14 @@
 const path = require('path');
 const webpack = require('webpack');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+
+const devMode = process.env.NODE_ENV !== 'production';
 
 module.exports = {
   entry: './app/index.js',
+
+  mode: 'development',
 
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -28,20 +31,25 @@ module.exports = {
         use: 'babel-loader'
       },
       {
-        test: /\.scss$/,
-        exclude: /node_modules/,
-        use: ['css-hot-loader'].concat(ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: 'css-loader!sass-loader'
-        })),
+        test: /\.(sa|sc|c)ss$/,
+        use: [
+          devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
+          'css-loader',
+          'postcss-loader',
+          'sass-loader',
+        ]
       }
     ]
   },
 
   plugins: [
-    new UglifyJsPlugin(),
     new HtmlWebpackPlugin({template: './app/index.html'}),
     new webpack.HotModuleReplacementPlugin(),
-    new ExtractTextPlugin('styles.css')
+    new MiniCssExtractPlugin({
+      // Options similar to the same options in webpackOptions.output
+      // both options are optional
+      filename: "[name].css",
+      chunkFilename: "[id].css"
+    })
   ]
 };

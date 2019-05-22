@@ -6,14 +6,14 @@
 * Change to the cloned repo's folder - `cd webpack-boilerplate`
 * Install dependencies - `npm install`
 * Start the server - `npm start`
-* Navigate to `localhost:3500` in the browser.
+* Navigate to `localhost:3500` in the browser
 * Enjoy!
 
 ## Content
 
-* Webpack
+* Webpack 4
 * ES6 support
 * Sass support
-* Hot Module Reload - browser reloads whenever a js or scss file changes.
+* Hot Module Reload - browser reloads whenever a js or scss file changes
 
-* You can change the port on webpack.config.js at line 19
+* You can change the port on webpack.config.js on line 22

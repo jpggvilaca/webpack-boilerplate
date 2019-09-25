@@ -3,12 +3,12 @@ const webpack = require('webpack');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const devMode = process.env.NODE_ENV !== 'production';
+const env = process.env.NODE_ENV;
 
 module.exports = {
   entry: './app/index.js',
 
-  mode: 'development',
+  mode: env,
 
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -33,7 +33,7 @@ module.exports = {
       {
         test: /\.(sa|sc|c)ss$/,
         use: [
-          devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
+          env == 'development' ? 'style-loader' : MiniCssExtractPlugin.loader,
           'css-loader',
           'postcss-loader',
           'sass-loader',

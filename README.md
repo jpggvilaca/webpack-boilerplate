@@ -9,13 +9,13 @@
 - Navigate to `localhost:3500` in the browser
 - Enjoy!
 
-Note: Use a node version <= 12
+Note: Use a node version > 10
 
 ## Content
 
-- Webpack 4
+- Webpack 5
 - ES6 support
 - Sass support
-- Hot Module Reload - browser reloads whenever a js or scss file changes
+- Hot Module Reload - browser reloads whenever a js or cs//scss file changes
 
-- You can change the port on webpack.config.js on line 22
+- You can change the port on webpack.config.js on line 26

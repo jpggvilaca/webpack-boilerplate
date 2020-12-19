@@ -17,10 +17,13 @@ module.exports = {
   },
 
   devServer: {
-    contentBase: path.join(__dirname, 'public'),
-    compress: true,
+    static: [
+      {
+        directory: path.join(__dirname, 'public'),
+        watch: true,
+      }
+    ],
     port: 3500,
-    hot: true,
   },
 
   module: {
@@ -35,7 +38,6 @@ module.exports = {
         use: [
           env == 'development' ? 'style-loader' : MiniCssExtractPlugin.loader,
           'css-loader',
-          'postcss-loader',
           'sass-loader',
         ]
       }
